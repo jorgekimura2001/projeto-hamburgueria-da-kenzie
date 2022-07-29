@@ -50,4 +50,9 @@ export const Container = styled.div`
             width: 360px;
         }
     }
+    /* @media (min-width: 1024px){
+        &:hover{
+            transform: scale(1.1)
+        }
+    } */
 `

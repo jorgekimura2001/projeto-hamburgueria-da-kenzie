@@ -13,10 +13,10 @@ export const Container = styled.div`
         margin-left: 16px;
     }
     @media (min-width: 1024px){
+        justify-content: center;
         flex-flow: row wrap;
         overflow-x: initial;
         margin-top: 32px;
         margin-left: 0;
-        gap: 20px;
     }
 `

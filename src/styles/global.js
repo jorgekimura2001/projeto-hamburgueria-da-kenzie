@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Inter', sans-serif;
         background-color: #fff;
     }
-    body, div, ul, ol, main, header, button, input, p, figure, form, main {
+    body, div, ul, ol, main, header, button, input, p, figure, form {
         margin: 0;
         padding: 0;
         border: 0;

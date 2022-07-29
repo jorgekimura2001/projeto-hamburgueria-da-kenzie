@@ -6,18 +6,20 @@ export const Container = styled.div`
     justify-content: start;
     flex-direction: column;
     height: inherit;
-    /* min-width: 300px; */
     margin-right: 20px;
     border: 2px solid rgb(var(--color-gray-20));
     border-radius: 5px;
 
     figure{
         background-color: rgb(var(--color-gray-0));
-        width: 300px;
+        width: 295px;
         height: 150px;
     }
     img{
         width: 50%;
+    }
+    img:hover{
+        transform: scale(1.1);
     }
 
     div {
@@ -63,5 +65,6 @@ export const Container = styled.div`
     }
     @media (min-width: 1024px){
         width: 300px;
+        margin-bottom: 20px;
     }
 ` 

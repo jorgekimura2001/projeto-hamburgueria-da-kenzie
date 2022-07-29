@@ -30,6 +30,7 @@ export const Container = styled.div`
             font-size: 16px;
             line-height: 19px;
             color: rgb(var(--color-gray-50));
+            margin-bottom: 20px;
         }
     }
     .total--cart {

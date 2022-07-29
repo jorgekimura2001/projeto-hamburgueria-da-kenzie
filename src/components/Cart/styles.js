@@ -63,8 +63,9 @@ export const Container = styled.div`
     }
     @media (min-width: 1024px) {
         min-width: 365px;
-        margin-left: 65px;
-       
+        max-width: 365px;
+        margin-left: 0px; 
+
         .cart--none{
             margin-top: 0;
         }
