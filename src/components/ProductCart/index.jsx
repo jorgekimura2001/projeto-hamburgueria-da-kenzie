@@ -1,15 +1,17 @@
+import { Container } from "./styles"
+
 function ProductCart ({img, name, category, id, removeProduct}){
     
     return (
-        <div>
+        <Container>
             <img src={img} alt={name} />
-            <div>
+            <div className="info--product">
                 <p>{name}</p>
                 <p>{category}</p>
             </div>
             <button 
             onClick={() => removeProduct(id)}>Remover</button>
-        </div>
+        </Container>
     )
 }
 export default ProductCart

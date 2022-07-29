@@ -61,4 +61,7 @@ export const Container = styled.div`
         font-size: 14px;
         line-height: 17px;
     }
+    @media (min-width: 1024px){
+        width: 300px;
+    }
 ` 

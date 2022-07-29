@@ -6,6 +6,7 @@ import GlobalStyle from './styles/global';
 import Header from './components/Header';
 import Cart from './components/Cart';
 import Modal from './components/Modal';
+import { Container } from './styles/styles';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([])
   const [modal, setModal] = useState(false)
+  const [inputValue, setInputValue] = useState("")
 
   useEffect(() => {
     api.get()
@@ -23,6 +25,7 @@ function App() {
   function showProducts(inputValue){
     const filteredProducts = products.filter(product => product.name.toLowerCase() === inputValue.toLowerCase() || product.category.toLowerCase() === inputValue.toLowerCase())
     setFilteredProducts(filteredProducts)
+    setInputValue(inputValue)
   }
 
   function handleClick(productId){
@@ -39,11 +42,22 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle/>
-      <Modal modal={modal} setModal={setModal}/>
-      <Header showProducts={showProducts}/> 
-      <ProductsList handleClick={handleClick} products={products} filteredProducts={filteredProducts}/>
-      <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
-      
+      <Header showProducts={showProducts}/>  
+      {
+        modal && <Modal setModal={setModal}/>
+      }
+      {
+          filteredProducts.length !== 0 &&
+          <Container> 
+            <p> Resultado para: <span>{inputValue}</span></p> 
+          </Container>
+        }
+      <main>
+        <div className='main--content'>
+          <ProductsList handleClick={handleClick} products={products} filteredProducts={filteredProducts} inputValue={inputValue}/>
+        </div>
+        <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+      </main>
     </div>
   );
 }

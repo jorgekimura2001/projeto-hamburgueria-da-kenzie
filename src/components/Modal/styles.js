@@ -1,19 +1,36 @@
 import styled from "styled-components";
 
 export const ContainerModal = styled.div`
-    background-color: rgba(var(--color-gray-50),.5);
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    inset: 0;
+
+    background-color: rgba(0,0,0,.5);
     
-    div{
-        background-color: aquamarine;
+    .modal-box{
+        position: relative;
+        background-color:  rgb(var(--color-secundary));
+        padding: 10px;
+        border-radius: 5px;
+
+        p{
+        color: rgb(var(--color-gray-100));
+        font-size: 16px;
+        font-weight: 500;
+        }
     }
-    button{
-        background:none;
+    .button-close{
+        border-radius: 100%;
+        top: -12px;
+        background: rgb(var(--color-secundary));
+        position: absolute;
+        right: -4px;
+        height: 25px;
+        width: 25px;
     }
 `

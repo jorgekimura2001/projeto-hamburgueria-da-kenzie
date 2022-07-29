@@ -11,23 +11,23 @@ function Cart({currentSale, setCurrentSale}){
 
     return (
         <Container>
-            <p>Carrinho de compras</p>
+            <p className="cart--title">Carrinho de compras</p>
+            <div className="cart--items">
             {
                 currentSale.length > 0 ?
                 <>
-                <div>
                 {
                     currentSale.map((product) => <ProductCart img={product.img} name={product.name} id={product.id} currentSale={currentSale} category={product.category} key={product.id} removeProduct={removeProduct}/>)
                 }
-                </div>
-                <CartTotal currentSale={currentSale}/>
+                <CartTotal setCurrentSale={setCurrentSale} currentSale={currentSale}/>
                 </>
                 :
-                <div>
-                    <p> Seu carrinho está vazio</p>
+                <div className="cart--none">
+                    <p>Seu carrinho está vazio</p>
                     <span>Adicionar itens</span>
                 </div>
             }
+            </div>
         </Container>
     )
 }
