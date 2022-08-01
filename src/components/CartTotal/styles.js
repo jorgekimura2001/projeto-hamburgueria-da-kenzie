@@ -53,9 +53,4 @@ export const Container = styled.div`
             color: rgb(var(--color-gray-50));
         }
     }
-    @media (min-width: 768px) {
-        img{
-            width: 500px;
-        }
-    }
 `
