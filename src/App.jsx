@@ -23,9 +23,11 @@ function App() {
   }, [])
 
   function showProducts(inputValue){
-    const filteredProducts = products.filter(product => product.name.toLowerCase() === inputValue.toLowerCase() || product.category.toLowerCase() === inputValue.toLowerCase())
-    setFilteredProducts(filteredProducts)
-    setInputValue(inputValue)
+      if (inputValue){
+        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(inputValue.toLowerCase()) || product.category.toLowerCase().includes(inputValue.toLowerCase()))
+        setFilteredProducts(filteredProducts)
+        setInputValue(inputValue)
+      }
   }
 
   function handleClick(productId){
