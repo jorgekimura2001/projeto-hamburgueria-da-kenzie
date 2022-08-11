@@ -22,13 +22,14 @@ function App() {
     .catch(error => console.log(error))
   }, [])
 
-  function showProducts(inputValue){
-      if (inputValue){
-        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(inputValue.toLowerCase()) || product.category.toLowerCase().includes(inputValue.toLowerCase()))
-        setFilteredProducts(filteredProducts)
-        setInputValue(inputValue)
-      }
-  }
+  // function showProducts(inputValue){
+  //   console.log(filteredProducts)
+  //     if (inputValue && filteredProducts.length >= 0){
+  //       const filteredProducts = products.filter(product => product.name.toLowerCase().includes(inputValue.toLowerCase()) || product.category.toLowerCase().includes(inputValue.toLowerCase()))
+  //       setFilteredProducts(filteredProducts)
+  //       setInputValue(inputValue)
+  //     }
+  // }
 
   function handleClick(productId){
     const productSelected = currentSale.find(product => product.id === productId)
@@ -44,7 +45,9 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle/>
-      <Header showProducts={showProducts}/>  
+      <Header 
+      // showProducts={showProducts} 
+      setInputValue={setInputValue} inputValue={inputValue}/>  
       {
         modal && <Modal setModal={setModal}/>
       }

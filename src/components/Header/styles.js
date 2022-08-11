@@ -6,7 +6,7 @@ export const HeaderItems = styled.header`
     background-color: rgb(var(--color-gray-0));
     padding-top: 15px;
 
-    form{
+    .form{
         background-color: #fff;
         margin: 14px 16px;
         padding: 0px 10px 0px 15px;
@@ -17,7 +17,7 @@ export const HeaderItems = styled.header`
         border: 2px solid rgb(var(--color-gray-20));
         border-radius: 8px;
     }
-    form > button{
+    .form > button{
         padding: 7px;
         margin: 10px;
         font-size: 14px;
@@ -29,12 +29,12 @@ export const HeaderItems = styled.header`
         border-radius: 8px;
 
     }
-    form > input {
+    .form > input {
         width: 50%;
         border: none;
         outline: none;
     }
-    form > input::placeholder {
+    .form > input::placeholder {
         color: #E0E0E0;
         font-size: 16px;
     }
@@ -64,7 +64,7 @@ export const HeaderItems = styled.header`
                 font-size: 18px;
             }
         }
-        form{
+        .form{
             margin: 10px 0;
         }
     }
